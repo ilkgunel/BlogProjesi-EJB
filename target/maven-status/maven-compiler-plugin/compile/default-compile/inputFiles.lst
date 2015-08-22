@@ -1,5 +1,6 @@
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/facade/UyeBilgileriFacade.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/entities/Uyeler.java
+/Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/controller/StatelessTestBean.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/entities/Yazilar.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/facade/IcerigiKaydetFacade.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/facade/UyeKaydiFacade.java
@@ -13,9 +14,11 @@
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/ejb/UyeKaydiEJB.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/controller/YaziyiGoruntule.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/ejb/OnizlemeEJB.java
+/Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/ejb/StatelessTestEJB.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/controller/IcerigiKaydet.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/controller/UyeBilgileri.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/facade/OnizlemeFacade.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/controller/GirisDenetlemeSinifi.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/ejb/UyeBilgileriEJB.java
+/Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/facade/StatelessTestEJBLocal.java
 /Users/ilkaygunel/NetBeansProjects/BlogProjesi-EJB/src/main/java/com/ilkgunel/ejb/YazilariGetirEJB.java

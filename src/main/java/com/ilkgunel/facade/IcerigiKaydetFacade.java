@@ -12,5 +12,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface IcerigiKaydetFacade {
-    public String icerigiVeritabaninaKaydet(Yazilar gelenIcerik);
+    public String icerigiVeritabaninaKaydet();
+    public Yazilar getGelenIcerik();
+    public void setGelenIcerik(Yazilar gelenIcerik);
 }

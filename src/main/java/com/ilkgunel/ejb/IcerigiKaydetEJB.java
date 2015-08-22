@@ -18,8 +18,24 @@ import javax.persistence.Persistence;
  */
 @Stateful
 public class IcerigiKaydetEJB implements IcerigiKaydetFacade{
+    Yazilar gelenIcerik;
+    public IcerigiKaydetEJB()
+    {
+        gelenIcerik=new Yazilar();
+    }
+
     @Override
-    public String icerigiVeritabaninaKaydet(Yazilar gelenIcerik)
+    public Yazilar getGelenIcerik() {
+        return gelenIcerik;
+    }
+
+    @Override
+    public void setGelenIcerik(Yazilar gelenIcerik) {
+        this.gelenIcerik = gelenIcerik;
+    }
+    
+    @Override
+    public String icerigiVeritabaninaKaydet()
     {
         String kaydetmeIslemSonucu="";
         EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");

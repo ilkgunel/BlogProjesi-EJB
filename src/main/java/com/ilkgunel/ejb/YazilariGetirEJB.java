@@ -10,6 +10,7 @@ import com.ilkgunel.facade.YazilariGetirFacade;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,7 +21,7 @@ import javax.persistence.TypedQuery;
  *
  * @author ilkaygunel
  */
-@Singleton
+@Stateless
 public class YazilariGetirEJB implements YazilariGetirFacade{
     
     List<Yazilar> veritabanindakiYazilar;

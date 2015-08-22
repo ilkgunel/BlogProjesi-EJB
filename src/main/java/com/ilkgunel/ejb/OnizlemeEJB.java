@@ -9,12 +9,13 @@ import com.ilkgunel.controller.IcerigiKaydet;
 import com.ilkgunel.entities.Yazilar;
 import com.ilkgunel.facade.OnizlemeFacade;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author ilkaygunel
  */
-@Stateful
+@Stateless
 public class OnizlemeEJB implements OnizlemeFacade{
     @Override
     public Yazilar onizlemeIsleminiYap(Yazilar yazilarObjesi,IcerigiKaydet icerigiKaydetObjesi)

@@ -5,6 +5,7 @@ com/ilkgunel/controller/YazilariGetir.class
 com/ilkgunel/controller/UyeKaydi.class
 com/ilkgunel/facade/IcerigiKaydetFacade.class
 com/ilkgunel/facade/UyeKaydiFacade.class
+com/ilkgunel/facade/StatelessTestEJBLocal.class
 com/ilkgunel/ejb/UyeBilgileriEJB.class
 com/ilkgunel/facade/OnizlemeFacade.class
 com/ilkgunel/entities/Uyeler.class
@@ -18,6 +19,8 @@ com/ilkgunel/controller/UyeBilgileri.class
 com/ilkgunel/controller/IcerigiKaydet.class
 com/ilkgunel/ejb/YazilariGetirEJB.class
 com/ilkgunel/ejb/IcerigiKaydetEJB.class
+com/ilkgunel/ejb/StatelessTestEJB.class
 com/ilkgunel/controller/Test.class
+com/ilkgunel/controller/StatelessTestBean.class
 com/ilkgunel/entities/Yazilar_.class
 com/ilkgunel/entities/Uyeler_.class

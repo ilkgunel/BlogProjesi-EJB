@@ -10,6 +10,7 @@ import com.ilkgunel.facade.UyeKaydiFacade;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -18,7 +19,7 @@ import javax.persistence.Persistence;
  *
  * @author ilkaygunel
  */
-@Stateful
+@Stateless
 public class UyeKaydiEJB implements UyeKaydiFacade{
      static int sonUyeKayitIdNo=10;
      String kayitSonucMesaji="";

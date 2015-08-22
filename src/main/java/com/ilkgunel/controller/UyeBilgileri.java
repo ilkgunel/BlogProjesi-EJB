@@ -2,13 +2,14 @@ package com.ilkgunel.controller;
 
 import com.ilkgunel.entities.Uyeler;
 import com.ilkgunel.facade.UyeBilgileriFacade;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 
 import java.io.Serializable;
 import javax.ejb.EJB;
+import javax.inject.Named;
 
-@ManagedBean
+
+@Named
 @SessionScoped
 public class UyeBilgileri implements Serializable{
 
@@ -39,3 +40,4 @@ public class UyeBilgileri implements Serializable{
         uyeBilgileriObjesi = uyeBilgileriFacadeObjesi.bilgileriGetir(girilenKullaniciAdi);
     }
 }
+

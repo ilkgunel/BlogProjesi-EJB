@@ -10,6 +10,7 @@ import com.ilkgunel.entities.Uyeler;
 import javax.annotation.Resource;
 import javax.ejb.Stateful;
 import com.ilkgunel.facade.UyeBilgileriFacade;
+import javax.ejb.Stateless;
 import javax.faces.bean.ManagedProperty;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -19,7 +20,7 @@ import javax.persistence.Persistence;
  *
  * @author ilkaygunel
  */
-@Stateful
+@Stateless
 public class UyeBilgileriEJB implements UyeBilgileriFacade{
    
     @Inject
