@@ -22,10 +22,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @SessionScoped
 public class GirisDenetlemeSinifi implements Serializable{
 	
-	public void login()  
-	{
-
-        System.out.println("Login Metoduna Girildi");
+    public void login()  
+    {
         try {
 
             ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
@@ -38,20 +36,20 @@ public class GirisDenetlemeSinifi implements Serializable{
             Logger.getLogger(GirisDenetlemeSinifi.class.getName()).log(Level.SEVERE, null, ex);
 
         } 
-        /*finally {
-            return null;
-        }*/
-        System.out.println("Login Metodundan Çıkıldı");
     }
 	
-	public void authorizedUserControl(){
+    public void authorizedUserControl()
+    {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
+        
+        //Oturum Açılmamış İse Spring Security AnonymousUser Olarak Görür.
+        //Oturum Açılmış İse Oturum Açan Kişinin Kullanıcı Adını Devreye Alır.
+        
         if(!authentication.getPrincipal().toString().equals("anonymousUser")){
 
             NavigationHandler nh =  FacesContext.getCurrentInstance().getApplication().getNavigationHandler();
-            nh.handleNavigation(FacesContext.getCurrentInstance(), null, "/icerikEkle.xhtml?faces-redirect=true");
+            nh.handleNavigation(FacesContext.getCurrentInstance(), null, "/index.xhtml?faces-redirect=true");
 
         }
     }

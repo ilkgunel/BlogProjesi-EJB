@@ -11,6 +11,7 @@ import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -18,6 +19,9 @@ import javax.persistence.Persistence;
  */
 @Stateful
 public class IcerigiKaydetEJB implements IcerigiKaydetFacade{
+    @PersistenceContext
+    private EntityManager em; 
+    
     Yazilar gelenIcerik;
     public IcerigiKaydetEJB()
     {
@@ -38,15 +42,15 @@ public class IcerigiKaydetEJB implements IcerigiKaydetFacade{
     public String icerigiVeritabaninaKaydet()
     {
         String kaydetmeIslemSonucu="";
-        EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
-        EntityManager em=emf.createEntityManager();
+        //EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
+        //EntityManager em=emf.createEntityManager();
         try {
                 em.getTransaction().begin();
                 em.persist(gelenIcerik);
                 em.getTransaction().commit();
                 kaydetmeIslemSonucu="İçerik Başarı İle Veritabanına Kaydedildi!";
-                em.close();
-                emf.close();
+                //em.close();
+                //emf.close();
         } 
 
         catch (Exception e) 

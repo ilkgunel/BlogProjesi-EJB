@@ -21,9 +21,12 @@
 
                 <h:outputText value="Şifreniz:" />
                 <p:password id="j_password" required="true" requiredMessage="Şifre Kısmı Boş Geçilemez"/>
-
+                
+                <h:outputText value="Beni Hatırla"/>
+                <h:selectBooleanCheckbox id="_spring_security_remember_me"/>
+                
                 <h:outputText value="" />
-                <p:commandButton value="Giriş Yapın" action="#{girisDenetlemeSinifi.login()}" actionListener="#{uyeBilgileri.bilgileriGetir}" ajax="false"/>
+                <p:commandButton value="Giriş Yapın" action="#{girisDenetlemeSinifi.login()}"  ajax="false"/>
 
                 <h:outputText value="" />
                 <p:button value="Kayıt Olun" outcome="kayitOl.xhtml"/>

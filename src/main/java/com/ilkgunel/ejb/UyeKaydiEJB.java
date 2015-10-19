@@ -10,25 +10,27 @@ import com.ilkgunel.facade.UyeKaydiFacade;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author ilkaygunel
  */
-@Stateless
+@Stateful
 public class UyeKaydiEJB implements UyeKaydiFacade{
+    
+    @PersistenceContext(unitName = "BlogProjesi")
+    private EntityManager em; 
+    
      static int sonUyeKayitIdNo=10;
      String kayitSonucMesaji="";
     @Override
     public String uyeKaydiniYap(Uyeler uyelerObjesi)
     {
        
-        EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
-        EntityManager em=emf.createEntityManager();
+        //EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
+        //EntityManager em=emf.createEntityManager();
 
         //Şifreyi MD5 ile şifreleyip veritabanına kaydediyoruz.
         try
@@ -58,8 +60,8 @@ public class UyeKaydiEJB implements UyeKaydiFacade{
                 em.persist(uyelerObjesi);
                 em.getTransaction().commit();
                 sonUyeKayitIdNo++;
-                em.close();
-                emf.close();
+                /*em.close();
+                emf.close();*/
                 kayitSonucMesaji="Kaydınız Başarı İle Tamamlandı";
         } 
         
@@ -71,4 +73,10 @@ public class UyeKaydiEJB implements UyeKaydiFacade{
         }
         return kayitSonucMesaji;
     }
+    
+    @Override
+    public String mesajiDondur()
+    {
+        return kayitSonucMesaji;
+    } 
 }

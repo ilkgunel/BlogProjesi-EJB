@@ -13,5 +13,5 @@ import javax.ejb.Local;
  */
 @Local
 public interface OnizlemeFacade {
-    public Yazilar onizlemeIsleminiYap(Yazilar yazilarObjesi,IcerigiKaydet icerigiKaydetObjesi);
+    public Yazilar onizlemeIsleminiYap(Yazilar yazilarObjesi);
 }

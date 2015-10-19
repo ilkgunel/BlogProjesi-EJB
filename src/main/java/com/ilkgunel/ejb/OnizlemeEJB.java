@@ -9,16 +9,20 @@ import com.ilkgunel.controller.IcerigiKaydet;
 import com.ilkgunel.entities.Yazilar;
 import com.ilkgunel.facade.OnizlemeFacade;
 import javax.ejb.Stateful;
-import javax.ejb.Stateless;
+import javax.inject.Inject;
 
 /**
  *
  * @author ilkaygunel
  */
-@Stateless
+@Stateful
 public class OnizlemeEJB implements OnizlemeFacade{
+    
+    @Inject
+    private IcerigiKaydet icerigiKaydetObjesi;
+
     @Override
-    public Yazilar onizlemeIsleminiYap(Yazilar yazilarObjesi,IcerigiKaydet icerigiKaydetObjesi)
+    public Yazilar onizlemeIsleminiYap(Yazilar yazilarObjesi)
     {
         yazilarObjesi.setYaziBaslik(icerigiKaydetObjesi.getGelenIcerik().getYaziBaslik());
         yazilarObjesi.setYaziIcerik(icerigiKaydetObjesi.getGelenIcerik().getYaziIcerik());

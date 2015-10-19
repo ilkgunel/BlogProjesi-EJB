@@ -9,12 +9,10 @@ import com.ilkgunel.entities.Yazilar;
 import com.ilkgunel.facade.YazilariGetirFacade;
 import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.Singleton;
 import javax.ejb.Stateless;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 /**
@@ -23,16 +21,18 @@ import javax.persistence.TypedQuery;
  */
 @Stateless
 public class YazilariGetirEJB implements YazilariGetirFacade{
+    @PersistenceContext(unitName = "BlogProjesi")
+    private EntityManager em; 
     
     List<Yazilar> veritabanindakiYazilar;
 	
-	EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
-	EntityManager em=emf.createEntityManager();
+	//EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
+	//EntityManager em=emf.createEntityManager();
     
         @Override
         public List<Yazilar> yazilariGetir()
         {
-            veritabanindakiYazilar=new ArrayList<Yazilar>();
+            veritabanindakiYazilar=new ArrayList<>();
             TypedQuery<Yazilar> yazilarQuery=em.createQuery("SELECT y FROM Yazilar y order by y.yaziId desc",Yazilar.class);
             veritabanindakiYazilar=yazilarQuery.getResultList();
             return veritabanindakiYazilar;

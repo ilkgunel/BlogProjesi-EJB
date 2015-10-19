@@ -21,7 +21,7 @@ public class YazilariGetir implements Serializable{
 	@PostConstruct
 	public void yazilariGetir()
 	{
-		veritabanindakiYazilar=yazilariGetirFacadeObjesi.yazilariGetir();
+            veritabanindakiYazilar=yazilariGetirFacadeObjesi.yazilariGetir();
 	}
 	
 	public List<Yazilar> getVeritabanindakiYazilar() {

@@ -4,10 +4,11 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    
     <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>WEB-INF/SpringConfiguration.xml</param-value>
-  </context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>WEB-INF/SpringConfiguration.xml</param-value>
+    </context-param>
   
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -41,6 +42,17 @@
             30
         </session-timeout>
     </session-config>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/error404.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error/error401.jsp</location>
+    </error-page>
+    
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>

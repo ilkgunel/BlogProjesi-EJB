@@ -7,10 +7,11 @@
 
 <h:head>
 	<title>İçerik Ekleme Sayfası</title>
+        <f:event type="preRenderView" listener="#{uyeBilgileri.bilgileriGetir()}"/>
 </h:head> 
 <h:body> 
 	<h:form id="icerikForm">
-            <h:outputText style="float:right;" value="#{uyeBilgileri.uyeBilgileriObjesi.yazarAdi} (#{uyeBilgileri.girilenKullaniciAdi}) Olarak Giriş Yaptınız" />
+            <h:outputText style="float:right;" value="#{uyeBilgileri.uyeBilgileriObjesi.kullaniciAdi} Olarak Giriş Yaptınız" />
 	    <br/>
 	    <a style="float:right;" href="#{request.contextPath}/j_spring_security_logout">Çıkış Yapmak İçin Tıklayın</a>
 		<p:inputText id="baslik" placeholder="Başlık Giriniz" required="true" requiredMessage="Başlık Kısmı Boş Olamaz!"

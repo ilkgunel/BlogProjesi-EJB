@@ -11,6 +11,7 @@ com/ilkgunel/facade/OnizlemeFacade.class
 com/ilkgunel/entities/Uyeler.class
 com/ilkgunel/ejb/OnizlemeEJB.class
 com/ilkgunel/controller/Onizleme.class
+com/ilkgunel/ejb/UyeMessageBean.class
 com/ilkgunel/controller/GirisDenetlemeSinifi.class
 com/ilkgunel/entities/Yazilar.class
 com/ilkgunel/facade/YazilariGoruntuleFacade.class
@@ -19,8 +20,6 @@ com/ilkgunel/controller/UyeBilgileri.class
 com/ilkgunel/controller/IcerigiKaydet.class
 com/ilkgunel/ejb/YazilariGetirEJB.class
 com/ilkgunel/ejb/IcerigiKaydetEJB.class
-com/ilkgunel/ejb/StatelessTestEJB.class
 com/ilkgunel/controller/Test.class
-com/ilkgunel/controller/StatelessTestBean.class
 com/ilkgunel/entities/Yazilar_.class
 com/ilkgunel/entities/Uyeler_.class

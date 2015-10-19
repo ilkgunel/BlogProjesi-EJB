@@ -13,4 +13,5 @@ import javax.ejb.Local;
 @Local
 public interface UyeKaydiFacade {
     public String uyeKaydiniYap(Uyeler uyelerObjesi);
+    public String mesajiDondur();
 }

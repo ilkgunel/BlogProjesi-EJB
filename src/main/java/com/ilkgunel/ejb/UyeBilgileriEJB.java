@@ -7,22 +7,21 @@ package com.ilkgunel.ejb;
 
 import com.ilkgunel.controller.IcerigiKaydet;
 import com.ilkgunel.entities.Uyeler;
-import javax.annotation.Resource;
 import javax.ejb.Stateful;
 import com.ilkgunel.facade.UyeBilgileriFacade;
-import javax.ejb.Stateless;
-import javax.faces.bean.ManagedProperty;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 /**
  *
  * @author ilkaygunel
  */
-@Stateless
+@Stateful
 public class UyeBilgileriEJB implements UyeBilgileriFacade{
-   
+    @PersistenceContext
+    private EntityManager em; 
+    
+    
     @Inject
     private IcerigiKaydet icerigiKaydetObjesi;
         
@@ -47,13 +46,22 @@ public class UyeBilgileriEJB implements UyeBilgileriFacade{
     @Override
     public Uyeler bilgileriGetir(String girilenKullaniciAdi)
     {
-        EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
-        EntityManager em=emf.createEntityManager();
+        //EntityManagerFactory emf=Persistence.createEntityManagerFactory("BlogProjesi");
+        //EntityManager em=emf.createEntityManager();
 
-        em.getTransaction().begin();
+        //em.getTransaction().begin();
         uyeBilgileriObjesi=em.find(Uyeler.class, girilenKullaniciAdi);
-        System.out.println("Yazar Adı:UyeBilgileriEJB:"+uyeBilgileriObjesi.getYazarAdi());
-        icerigiKaydetObjesi.getGelenIcerik().setYazarAdi(uyeBilgileriObjesi.getYazarAdi());
-        return uyeBilgileriObjesi;
+        if(uyeBilgileriObjesi==null)
+        {
+            Uyeler u=new Uyeler();
+            return u;
+        }
+        else
+        {
+            System.out.println("Yazar Adı:UyeBilgileriEJB:"+uyeBilgileriObjesi.getYazarAdi());
+            icerigiKaydetObjesi.getGelenIcerik().setYazarAdi(uyeBilgileriObjesi.getYazarAdi());
+            return uyeBilgileriObjesi;
+        }
+        
     }
 }
